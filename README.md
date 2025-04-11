@@ -34,7 +34,7 @@ pythonLines = lines.filter(lambda line: "Python" in line)
 
 pythonLines.first()
 
-**// parallelize method in python**
+**parallelize method in python**
 
 nums = sc.parallelize([1, 2, 3, 4])
 
@@ -43,11 +43,13 @@ for num in squared:
   print "%i " % (num)
 
 **flatMap**
+
 lines = sc.parallelize(["hello world", "hi"])
 words = lines.flatMap(lambda line: line.split(" "))
 words.first()
 
 **action**
+
 nums = sc.parallelize([1, 2, 3, 4])
 sum = nums.reduce(lambda x, y: x + y)
 
@@ -72,6 +74,7 @@ result = words.map( lambda x: (x,1)).reduceByKey( lambda x, y: x + y )
 result.saveAsTextFile("output")
 
 **Running python script**
+
 bin/spark-submit my_script.py
 
 For example, if you have to run wordcount program file wc.py
