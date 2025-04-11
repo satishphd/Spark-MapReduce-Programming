@@ -42,12 +42,12 @@ squared = nums.map(lambda x: x * x).collect()
 for num in squared:
   print "%i " % (num)
 
-** flatMap **
+**flatMap**
 lines = sc.parallelize(["hello world", "hi"])
 words = lines.flatMap(lambda line: line.split(" "))
 words.first()
 
-** action**
+**action**
 nums = sc.parallelize([1, 2, 3, 4])
 sum = nums.reduce(lambda x, y: x + y)
 
