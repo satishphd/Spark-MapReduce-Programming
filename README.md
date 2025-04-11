@@ -35,10 +35,12 @@ pythonLines = lines.filter(lambda line: "Python" in line)
 pythonLines.first()
 
 **// parallelize method in python**
+
 nums = sc.parallelize([1, 2, 3, 4])
+
 squared = nums.map(lambda x: x * x).collect()
 for num in squared:
-print "%i " % (num)
+  print "%i " % (num)
 
 ** flatMap **
 lines = sc.parallelize(["hello world", "hi"])
